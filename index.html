@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sasta Bank</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="./style.css">
+
+    </head>
+    <body class="w-[90%] lg:w-[80%] mx-auto">
+       <div id="login-area" class=" w-full lg:w-fit mt-10 mx-auto">
+            <h1 class="text-center text-3xl font-bold mb-10">Welcome to Pioneer
+                Bank</h1>
+            <div
+                class="submit-are w-full space-y-4 shadow-2xl p-4 rounded-md py-8"
+                id="submit-are">
+                <h4 class="text-2xl font-semibold text-center  ">Login</h4>
+                <input type="text" class="w-full bg-slate-100 p-2 rounded-md"
+                    placeholder="Email">
+                <br>
+                <input type="password"
+                    class="w-full bg-slate-100 p-2 rounded-md"
+                    placeholder="Password">
+                <br>
+                <button id="login"
+                    class="px-5 py-2 bg-green-500 text-white font-semibold  rounded-md">Enter</button>
+            </div>
+        </div>
+        <div id="transactionArea" class="my-10 border-2">
+            <div class=" grid grid-cols-1 lg:grid-cols-3 justify-between gap-4">
+
+                <div class="deposit status ">
+                    <h5>Deposit</h5>
+                    <h2 class="text-3xl font-bold">$ <span
+                            id="currentDeposit">00</span></h2>
+                </div>
+
+                <div class="withdraw status">
+                    <h5>Withdraw</h5>
+                    <h2 class="text-3xl font-bold">$ <span
+                            id="currentWithdraw">00</span></h2>
+                </div>
+
+                <div class="balance status">
+                    <h5>Balance</h5>
+                    <h2 class="text-3xl font-bold">$ <span
+                            id="currentBalance">1240</span></h2>
+                </div>
+
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2  lg:gap-10 lg:p-5">
+                <div class="col-md-6">
+                    <div class="submit-area py-2 px-4 lg:p-10 space-y-4">
+                        <h4 class="text-xl lg:text-3xl font-bold">Deposit</h4>
+                        <input id="depositAmount" type="text"
+                            class="w-full bg-slate-100 p-2 rounded-md"
+                            placeholder="$ amount you want to deposit">
+                        <br>
+                        <button id="addDeposit" 
+                            class="bg-blue-400 p-2 lg:py-2 lg:px-5 rounded-md text-white text-lg lg:text-xl font-semibold">Deposit</button>
+                    </div>
+                </div>
+                <div class>
+                    <div
+                        class="submit-area submit-area py-2 px-4 lg:p-10 space-y-4">
+                        <h4 class="text-xl lg:text-3xl font-bold">Withdraw</h4>
+                        <input id="withdrawAmount" type="text"
+                            class="w-full bg-slate-100 p-2 rounded-md"
+                            placeholder="$ amount you want to withdraw">
+                        <br>
+                        <button id="addWithdraw"
+                            class="bg-red-400 p-2 lg:py-2 lg:px-5 rounded-md text-white text-lg lg:text-xl font-semibold">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./bank.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
