@@ -32,18 +32,23 @@ addDeposit.addEventListener("click", function () {
 
 addWithdraw.addEventListener("click", function () {
   const presentWithdrawAmount = Number(withdrawAmount.value);
-  const presentWithdraw = Number(currentWithdraw.innerText);
-  const mainBalance = Number(currentBalance.innerText);
-  if (presentWithdrawAmount < mainBalance) {
-    const totalWithdraw = presentWithdrawAmount + presentWithdraw;
+  if (!isNaN(presentWithdrawAmount)) {
+    const presentWithdraw = Number(currentWithdraw.innerText);
+    const mainBalance = Number(currentBalance.innerText);
+    if (presentWithdrawAmount < mainBalance) {
+      const totalWithdraw = presentWithdrawAmount + presentWithdraw;
 
-    currentWithdraw.innerText = totalWithdraw;
-    //   console.log(typeof currentBalance.innerHTML);
-    let currentBalanceNow = mainBalance - presentWithdrawAmount;
-    currentBalance.innerText = currentBalanceNow;
-    withdrawAmount.value = "";
-  } else {
-    alert("account me maal he ki nai ee to dekh...");
-    withdrawAmount.value = "";
+      currentWithdraw.innerText = totalWithdraw;
+      //   console.log(typeof currentBalance.innerHTML);
+      let currentBalanceNow = mainBalance - presentWithdrawAmount;
+      currentBalance.innerText = currentBalanceNow;
+      withdrawAmount.value = "";
+    } else {
+      alert("account me maal he ki nai ee to dekh...");
+      withdrawAmount.value = "";
+    }
+  }
+  else{
+    console.log('type number pls...');
   }
 });
