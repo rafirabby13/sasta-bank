@@ -32,6 +32,7 @@ addDeposit.addEventListener("click", function () {
 
 addWithdraw.addEventListener("click", function () {
   const presentWithdrawAmount = Number(withdrawAmount.value);
+  console.log(isNaN(presentWithdrawAmount));
   if (!isNaN(presentWithdrawAmount)) {
     const presentWithdraw = Number(currentWithdraw.innerText);
     const mainBalance = Number(currentBalance.innerText);
@@ -39,7 +40,7 @@ addWithdraw.addEventListener("click", function () {
       const totalWithdraw = presentWithdrawAmount + presentWithdraw;
 
       currentWithdraw.innerText = totalWithdraw;
-      //   console.log(typeof currentBalance.innerHTML);
+     
       let currentBalanceNow = mainBalance - presentWithdrawAmount;
       currentBalance.innerText = currentBalanceNow;
       withdrawAmount.value = "";
@@ -47,8 +48,7 @@ addWithdraw.addEventListener("click", function () {
       alert("account me maal he ki nai ee to dekh...");
       withdrawAmount.value = "";
     }
-  }
-  else{
-    console.log('type number pls...');
+  } else {
+    alert("type number pls...");
   }
 });
